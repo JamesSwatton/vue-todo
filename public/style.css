@@ -1,3 +1,7 @@
 .purchased {
     background-color: lightblue;
 }
+
+#todo-input {
+    display: inline;
+}

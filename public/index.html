@@ -8,20 +8,40 @@
 </head>
 <body>
    <div id="app">
-      <h1> Shopping List </h1>
-      <ul>
-          <li v-for="(item, index) in items" :class="item.purchased?
-              'purchased':'notPurchased'">
-              <span>
-                  {{ item.name }}
-              </span>
-              <span v-if="item.purchased">-- Purchased!</span>
-              <button v-if="!item.purchased" @click="buyItem(index)">Purchase</button>
-          </li>
-      </ul>
-
-      <input type="text" v-model="newItem">
-      <button @click="saveNewItem">Save New Item</button>
+       <div>
+           <h1> Shopping List </h1>
+           <ul>
+               <li v-for="(item, index) in items" :class="item.purchased?
+               'purchased':'not-purchased'">
+                   <span>
+                       {{ item.name }}
+                   </span>
+                   <span v-if="item.purchased">-- Purchased!</span>
+                   <button v-if="!item.purchased" @click="buyItem(index)">Purchase</button>
+               </li>
+           </ul>
+               <input type="text" v-model="newItem">
+               <button @click="saveNewItem">Save New Item</button>
+       </div>
+       <div>
+           <h1> Todo List </h1>
+           <ul>
+               <li v-for="todo in todos" :class="todo.priority">{{ todo.name }}</li>
+           </ul>
+               <div id="todo-input">
+                   <input type="text" v-model="newTodo">
+                   <div>
+                       <input v-model="priority" type="radio" id="high" name="priority" value="High">
+                       <label for="high">High</label>
+                   </div>
+                   <div>
+                       <input v-model="priority" type="radio" id="low"
+                       name="priority" value="Low" checked>
+                       <label for="low">Low</label>
+                   </div>
+                   <button @click="saveNewTodo">Save New Todo</button>
+               </div>
+       </div>
    </div>
 </body>
 </html>

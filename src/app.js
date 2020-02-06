@@ -10,7 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Eggs', purchased: false }, 
             { name: 'Coffee', purchased: false }
         ],
-            newItem: ""
+            newItem: "",
+            todos: [
+                { name: 'Feed the cat', priority: 'low' },
+                { name: 'Write a novel', priority: 'low' },
+                { name: 'Create a killer app', priority: 'low' },
+            ],
+            newTodo: "",
+            priority: ""
         },
         methods: {
             saveNewItem: function() {
@@ -24,6 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             buyItem: function(index) {
                 this.items[index].purchased = true;
+            },
+            saveNewTodo: function() {
+                if(this.newTodo) {
+                    this.todos.push({
+                        name: this.newTodo,
+                        priority: this.priority
+                    })
+                }
             }
         }
     })
