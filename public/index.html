@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Vue Todo</title>
+    <link rel="stylesheet" href="./style.css">
     <script src="./js/bundle.js"></script>
 </head>
 <body>
    <div id="app">
       <h1> Shopping List </h1>
       <ul>
-          <li v-for="(item, index) in items">
+          <li v-for="(item, index) in items" :class="item.purchased?
+              'purchased':'notPurchased'">
               <span>
                   {{ item.name }}
               </span>

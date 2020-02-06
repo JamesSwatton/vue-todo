@@ -14,11 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         methods: {
             saveNewItem: function() {
-                this.items.push({
-                    name: this.newItem,
-                    purchased: false
-                });
-                this.newItem = "";
+                if (this.newItem) {
+                    this.items.push({
+                        name: this.newItem,
+                        purchased: false
+                    });
+                    this.newItem = "";
+                }
             },
             buyItem: function(index) {
                 this.items[index].purchased = true;
