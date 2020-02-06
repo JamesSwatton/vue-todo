@@ -18,6 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     name: this.newItem,
                     purchased: false
                 });
+                this.newItem = "";
+            },
+            buyItem: function(index) {
+                this.items[index].purchased = true;
             }
         }
     })
