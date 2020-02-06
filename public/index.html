@@ -31,12 +31,11 @@
                <div id="todo-input">
                    <input type="text" v-model="newTodo">
                    <div>
-                       <input v-model="priority" type="radio" id="high" name="priority" value="High">
+                       <input v-model="priority" type="radio" name="priority" value="high">
                        <label for="high">High</label>
                    </div>
                    <div>
-                       <input v-model="priority" type="radio" id="low"
-                       name="priority" value="Low" checked>
+                       <input v-model="priority" type="radio" name="priority" value="low" checked>
                        <label for="low">Low</label>
                    </div>
                    <button @click="saveNewTodo">Save New Todo</button>

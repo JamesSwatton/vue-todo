@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
         el: "#app",
         data: {
             items: [
-            { name: 'Milk', purchased: false }, 
-            { name: 'Beans', purchased: true}, 
-            { name: 'Eggs', purchased: false }, 
-            { name: 'Coffee', purchased: false }
-        ],
+                { name: 'Milk', purchased: false }, 
+                { name: 'Beans', purchased: true}, 
+                { name: 'Eggs', purchased: false }, 
+                { name: 'Coffee', purchased: false }
+            ],
             newItem: "",
             todos: [
                 { name: 'Feed the cat', priority: 'low' },
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 { name: 'Create a killer app', priority: 'low' },
             ],
             newTodo: "",
-            priority: ""
+            priority: null
         },
         methods: {
             saveNewItem: function() {
@@ -33,13 +33,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.items[index].purchased = true;
             },
             saveNewTodo: function() {
-                if(this.newTodo) {
-                    this.todos.push({
-                        name: this.newTodo,
-                        priority: this.priority
-                    })
+                if (this.newTodo) {
+                    if (this.priority === 'high') {
+                        this.todos.unshift({
+                            name: this.newTodo,
+                            priority: this.priority
+                        })
+                    } else {
+                        this.todos.push({
+                            name: this.newTodo,
+                            priority: this.priority
+                        })
+                    }
+                    this.newTodo = "";
                 }
             }
         }
-    })
-})
+    });
+});
+ 

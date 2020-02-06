@@ -5,3 +5,11 @@
 #todo-input {
     display: inline;
 }
+
+.high {
+    border: 2px solid lightcoral;
+}
+
+.low {
+    border: 2px solid lightgreen;
+}
