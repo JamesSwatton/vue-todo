@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data: {
             items: [
             { name: 'Milk', purchased: false }, 
-            { name: 'Beans', purchased: false }, 
+            { name: 'Beans', purchased: true}, 
             { name: 'Eggs', purchased: false }, 
             { name: 'Coffee', purchased: false }
         ],

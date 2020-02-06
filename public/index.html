@@ -9,7 +9,12 @@
    <div id="app">
       <h1> Shopping List </h1>
       <ul>
-          <li v-for="item in items">{{ item.name }}</li>
+          <li v-for="item in items">
+              <span>
+                  {{ item.name }}
+              </span>
+              <span v-if="item.purchased">-- Purchased!</span>
+          </li>
       </ul>
 
       <input type="text" v-model="newItem">
