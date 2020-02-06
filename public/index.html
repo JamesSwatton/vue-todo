@@ -7,8 +7,13 @@
 </head>
 <body>
    <div id="app">
-      <h1> {{ greeting }} </h1>
-      <button @click="updateGreeting('James')">Change Greeting</button>
+      <h1> Shopping List </h1>
+      <ul>
+          <li v-for="item in items">{{ item.name }}</li>
+      </ul>
+
+      <input type="text" v-model="newItem">
+      <button @click="saveNewItem">Save New Item</button>
    </div>
 </body>
 </html>

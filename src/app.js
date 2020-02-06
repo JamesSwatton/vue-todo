@@ -4,11 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
     new Vue({
         el: "#app",
         data: {
-            greeting: "Hello World!"
+            items: [
+            { name: 'Milk', purchased: false }, 
+            { name: 'Beans', purchased: false }, 
+            { name: 'Eggs', purchased: false }, 
+            { name: 'Coffee', purchased: false }
+        ],
+            newItem: ""
         },
         methods: {
-            updateGreeting: function(name) {
-                this.greeting = `Hello ${name}!`
+            saveNewItem: function() {
+                this.items.push({
+                    name: this.newItem,
+                    purchased: false
+                });
             }
         }
     })
